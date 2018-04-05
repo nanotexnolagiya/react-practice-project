@@ -7,14 +7,13 @@ import configureStore from './store';
 import routes from './routes';
 
 
-const initialState = {};
-const store = configureStore(initialState, browserHistory);
+const store = configureStore();
 
 const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render((
     <Provider store={store}>
-        <Router history={browserHistory}>
+        <Router history={history}>
             {routes}
         </Router>
     </Provider>),
